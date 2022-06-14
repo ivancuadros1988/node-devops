@@ -1,0 +1,15 @@
+name: Pull Request
+ 
+on:
+  workflow_run:
+    workflows: [ "Docker Image CI" ]
+    types:
+      - completed
+  workflow_dispatch:
+ 
+jobs:
+  work:
+    name: Some Workflow Work
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Some work"
