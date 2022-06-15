@@ -2,3 +2,5 @@ https://www.wearecogworks.com/blog/quick-guide-to-running-sub-workflows-with-git
 
 
 https://github.com/marketplace/actions/github-pull-request-action
+
+https://github.com/marketplace/actions/merge-branch
