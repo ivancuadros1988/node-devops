@@ -2,14 +2,12 @@ name: Docker Image CI
 
 on:
   push:
-    branches: [ master ]
+    branches: [ dev ]
   pull_request:
-    branches: [ master ]
+    branches: [ dev ]
 
 jobs:
-
   docker:
-
     runs-on: ubuntu-latest
 
     steps:
@@ -20,3 +18,15 @@ jobs:
       run: docker login --username icuadrosaforo255 --password ${{ secrets.DOCKER_HUB_PASSWORD }}
     - name: Push the docker image
       run: docker push icuadrosaforo255/node-devops:$GITHUB_RUN_NUMBER
+  
+  merge-branch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+
+      - name: Merge dev -> master
+        uses: devmasx/merge-branch@master
+        with:
+          type: now
+          target_branch: master
+          github_token: ${{ github.token }}
