@@ -1,3 +1,19 @@
+# name: Pull Request
+ 
+# on:
+#   workflow_run:
+#     workflows: [ "Docker Image CI" ]
+#     types:
+#       - completed
+#   workflow_dispatch:
+ 
+# jobs:
+#   work:
+#     name: Some Workflow Work
+#     runs-on: ubuntu-latest
+#     steps:
+#       - run: echo "Some work"
+
 name: Pull Request
  
 on:
@@ -8,8 +24,12 @@ on:
   workflow_dispatch:
  
 jobs:
-  work:
-    name: Some Workflow Work
+  pull-request:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "Some work"
+    - uses: actions/checkout@v2
+    - name: pull-request
+      uses: repo-sync/pull-request@v2
+      with:
+        destination_branch: "main"
+        github_token: ${{ secrets.TOKEN_PR }}
