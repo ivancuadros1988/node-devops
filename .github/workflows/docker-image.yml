@@ -8,6 +8,7 @@ on:
 
 jobs:
   docker:
+    name: CI Docker
     runs-on: ubuntu-latest
 
     steps:
@@ -20,6 +21,9 @@ jobs:
       run: docker push icuadrosaforo255/node-devops:$GITHUB_RUN_NUMBER
   
   merge-branch:
+    name: Merge to master
+    needs: docker
+    # needs: [job1, job2]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
