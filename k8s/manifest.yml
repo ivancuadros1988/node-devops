@@ -5,7 +5,7 @@ metadata:
   labels:
     app: service-demo
 spec:
-  replicas: 2
+  replicas: 3
   selector:
     matchLabels:
       app: service-demo
@@ -16,12 +16,12 @@ spec:
     spec:
       containers:
       - name: app-demo
-        image: icuadrosaforo255/node-devops:9
+        image: icuadrosaforo255/node-devops:10
         ports:
         - containerPort: 5000
         env:
         - name: FROM_ENV
-          value: "Kubernetes 2"
+          value: "Kubernetes 3"
 ---
 kind: Service
 apiVersion: v1
