@@ -5,7 +5,7 @@ metadata:
   labels:
     app: service-demo
 spec:
-  replicas: 2
+  replicas: 4
   selector:
     matchLabels:
       app: service-demo
@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: app-demo
-        image: icuadrosaforo255/node-devops:6
+        image: icuadrosaforo255/node-devops:8
         ports:
         - containerPort: 5000
         env:
