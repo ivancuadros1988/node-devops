@@ -21,7 +21,7 @@ spec:
         - containerPort: 5000
         env:
         - name: FROM_ENV
-          value: "Kubernetes 11"
+          value: "Kubernetes 13"
 ---
 kind: Service
 apiVersion: v1
