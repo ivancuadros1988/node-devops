@@ -1,0 +1,8 @@
+https://www.youtube.com/watch?v=2G_CCDnxXcE
+
+https://kubectl.docs.kubernetes.io/installation/kustomize/
+https://kubectl.docs.kubernetes.io/installation/kustomize/chocolatey/
+https://kubectl.docs.kubernetes.io/guides/introduction/kustomize/
+https://kubectl.docs.kubernetes.io/guides/example/multi_base/
+
+kustomize build . | kubectl apply -f -
