@@ -1,3 +1,5 @@
+kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d; echo
+
 https://www.youtube.com/watch?v=2G_CCDnxXcE
 
 https://kubectl.docs.kubernetes.io/installation/kustomize/

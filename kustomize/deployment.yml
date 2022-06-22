@@ -21,4 +21,4 @@ spec:
         - containerPort: 5000
         env:
         - name: FROM_ENV
-          value: "Kubernetes 13"
+          value: "Kubernetes 15"
