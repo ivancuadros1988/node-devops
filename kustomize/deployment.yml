@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app-deployment-demo
+  labels:
+    app: service-demo
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: service-demo
+  template:
+    metadata:
+      labels:
+        app: service-demo
+    spec:
+      containers:
+      - name: app-demo
+        image: icuadrosaforo255/node-devops:11
+        ports:
+        - containerPort: 5000
+        env:
+        - name: FROM_ENV
+          value: "Kubernetes 13"
